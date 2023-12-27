@@ -427,19 +427,20 @@ Mọi hàm đều có một tham số `this` ẩn. Khi gọi một hàm như m�
 
 Khi gọi trực tiếp một hàm mà không xác định đối tượng, `this` sẽ được đặt ngầm thành đối tượng chung. Các thuộc tính của đối tượng toàn cục bao gồm tất cả các biến toàn cục của chương trình. Do đó, khi gọi trực tiếp một hàm, tham chiếu thuộc tính được xác định bởi `this` tương đương với tham chiếu đến một biến toàn cục. Vì quá trình xử lý `this` phụ thuộc vào cách gọi hàm nên cùng một tham chiếu `this` có thể có ý nghĩa khác nhau trong các trường hợp gọi khác nhau. Ví dụ:
 
+
 ``` js
-hàm setX(giá trị) {
-   this.x = giá trị;
+function setX(value) {
+   this.x = value;
 }
-var obj = Đối tượng mới;
-obj.setX = setX; // Sử dụng setX làm phương thức của obj
+var obj = new Object;
+obj.setX = setX; // Use setX as a method of obj
 
-obj.setX(42); // Gọi setX làm phương thức
-cảnh báo (obj.x); // Hiển thị 42
+obj.setX(42); // Call setX as a method
+alert(obj.x); // Display 42
 
-setX(84); // Gọi trực tiếp setX
-Alert(x); // Lấy biến toàn cục x, hiển thị 84
-cảnh báo (obj.x); // Hiển thị 42
+setX(84); // Call setX directly
+alert(x); // Get global variable x, display 84
+alert(obj.x); // Display 42
 ```
 
 `this` gây thêm nhầm lẫn vì một số HTML ngầm chuyển đổi các đoạn mã JavaScript thành các hàm được gọi là phương thức. Ví dụ:
