@@ -103,10 +103,10 @@ Một điểm khác biệt quan trọng khác giữa JavaScript và cú pháp C 
 ``` js
 var a, x, y
 var r = 10
-với (Toán học) {
-   a = PI * r * r
-   x = r * cos(PI)
-   y = r * sin(PI / 2)
+with (Math) {
+  a = PI * r * r
+  x = r * cos(PI)
+  y = r * sin(PI / 2)
 }
 ```
 
@@ -126,8 +126,8 @@ JavaScript 1.1 đã thêm các toán tử `delete`, `typeof` và `void`. Trong J
 Toán tử `void` chỉ đánh giá các toán hạng của nó và trả về *không xác định*. Cách phổ biến để truy cập *không xác định* là `void 0`. Toán tử `void` được giới thiệu như một công cụ hỗ trợ xác định các siêu liên kết HTML thực thi mã JavaScript khi được nhấp vào. Ví dụ:
 
 ``` html
-<a href="javascript:void hữu íchFunction()">
-   Bấm để làm điều gì đó hữu ích
+<a href="javascript:void usefulFunction()">
+  Click to do something useful
 </a>
 ```
 
@@ -136,35 +136,35 @@ Toán tử `void` chỉ đánh giá các toán hạng của nó và trả về *
 Sự khác biệt lớn nhất giữa các biểu thức C và JavaScript là các toán tử JavaScript tự động chuyển đổi toán hạng của chúng thành các kiểu dữ liệu trong miền của toán tử. JavaScript 1.1 đã thêm cơ chế có thể định cấu hình để chuyển đổi các đối tượng tùy ý thành giá trị số hoặc chuỗi. Hình 4 tóm tắt các quy tắc chuyển đổi kiểu ẩn (ép buộc) của JavaScript 1.1.
 
 <table>
-   <thead>
-     <tr><th>From - To</th><th>function</th><th>object</th><th>number</th><th>boolean</th><th>string< /th></tr>
-   </thead>
-   <tbody>
-     <tr><td><b>undefined</b></td><td>error</td><td>null</td><td>error</td><td>false</td> <td><code>"undefined"</code></td></tr>
-     <tr><td><b>function</b></td><td>N/C</td><td>Function object</td><td>valueOf/error</td><td> valueOf/true</td><td>decompile</td></tr>
-     <tr><td><b>object (not null)</b></td><td>Function object</td><td>N/C</td><td>valueOf/error</td ><td>valueOf/true</td><td>toString/valueOf<sup>1</sup></td></tr>
-     <tr><td><b>object (null)</b></td><td>error</td><td>N/C</td><td>0</td><td> false</td><td><code>"null"</code></td></tr>
-     <tr><td><b>number (zero)</b></td><td>error</td><td>null</td><td>N/C</td><td> false</td><td><code>"0"</code></td></tr>
-     <tr><td><b>number (nonzero)</b></td><td>error</td><td>Number</td><td>N/C</td><td> true</td><td>default</td></tr>
-     <tr><td><b>number (NaN)</b></td><td>error</td><td>Number</td><td>N/C</td><td> false<sup>2</sup></td><td><code>"NaN"</code></td></tr>
-     <tr><td><b>number (+Infinity)</b></td><td>error</td><td>Number</td><td>N/C</td><td >true</td><td><code>"+Infinity"</code></td></tr>
-     <tr><td><b>number (-Infinity)</b></td><td>error</td><td>Number</td><td>N/C</td><td >true</td><td><code>"-Infinity"</code></td></tr>
-     <tr><td><b>boolean (false)</b></td><td>error</td><td>Boolean</td><td>0</td><td>N/ C</td><td><code>"false"</code></td></tr>
-     <tr><td><b>boolean (true)</b></td><td>error</td><td>Boolean</td><td>1</td><td>N/ C</td><td><code>"true"</code></td></tr>
-     <tr><td><b>string (empty)</b></td><td>error</td><td>String</td><td>error<sup>3</sup>< /td><td>false</td><td>N/C</td></tr>
-     <tr><td><b>string (non-empty)</b></td><td>error</td><td>String</td><td>number/error</td>< td>true</td><td>N/C</td></tr>
-   </tbody>
+  <thead>
+    <tr><th>From - To</th><th>function</th><th>object</th><th>number</th><th>boolean</th><th>string</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><b>undefined</b></td><td>error</td><td>null</td><td>error</td><td>false</td><td><code>"undefined"</code></td></tr>
+    <tr><td><b>function</b></td><td>N/C</td><td>Function object</td><td>valueOf/error</td><td>valueOf/true</td><td>decompile</td></tr>
+    <tr><td><b>object (not null)</b></td><td>Function object</td><td>N/C</td><td>valueOf/error</td><td>valueOf/true</td><td>toString/valueOf<sup>1</sup></td></tr>
+    <tr><td><b>object (null)</b></td><td>error</td><td>N/C</td><td>0</td><td>false</td><td><code>"null"</code></td></tr>
+    <tr><td><b>number (zero)</b></td><td>error</td><td>null</td><td>N/C</td><td>false</td><td><code>"0"</code></td></tr>
+    <tr><td><b>number (nonzero)</b></td><td>error</td><td>Number</td><td>N/C</td><td>true</td><td>default</td></tr>
+    <tr><td><b>number (NaN)</b></td><td>error</td><td>Number</td><td>N/C</td><td>false<sup>2</sup></td><td><code>"NaN"</code></td></tr>
+    <tr><td><b>number (+Infinity)</b></td><td>error</td><td>Number</td><td>N/C</td><td>true</td><td><code>"+Infinity"</code></td></tr>
+    <tr><td><b>number (-Infinity)</b></td><td>error</td><td>Number</td><td>N/C</td><td>true</td><td><code>"-Infinity"</code></td></tr>
+    <tr><td><b>boolean (false)</b></td><td>error</td><td>Boolean</td><td>0</td><td>N/C</td><td><code>"false"</code></td></tr>
+    <tr><td><b>boolean (true)</b></td><td>error</td><td>Boolean</td><td>1</td><td>N/C</td><td><code>"true"</code></td></tr>
+    <tr><td><b>string (empty)</b></td><td>error</td><td>String</td><td>error<sup>3</sup></td><td>false</td><td>N/C</td></tr>
+    <tr><td><b>string (non-empty)</b></td><td>error</td><td>String</td><td>number/error</td><td>true</td><td>N/C</td></tr>
+  </tbody>
 </table>
 
-* Nếu các kết quả được phân tách bằng dấu gạch chéo, điều đó có nghĩa là JavaScript sẽ thử cái trước và sử dụng cái sau nếu không thành công.
-* **N/C** có nghĩa là Không cần chuyển đổi.
-* ** dịch ngược ** đại diện cho một chuỗi chứa mã nguồn duy nhất của hàm.
-* **toString** thể hiện kết quả của việc gọi phương thức toString.
-* **valueOf** thể hiện kết quả của việc gọi phương thức valueOf khi nó có thể trả về một giá trị cho loại mục tiêu.
-* **số** biểu thị giá trị số tương ứng khi chuỗi là số nguyên hợp lệ hoặc chữ số dấu phẩy động.
-* <sup>1</sup> Nếu valueOf không trả về một chuỗi, hãy thực hiện chuyển đổi đối tượng thành chuỗi mặc định.
-* <sup>2</sup> Trong JavaScript 1.1 được Navigator 3.0 sử dụng, NaN được chuyển thành true.
-* <sup>3</sup> Trong JavaScript 1.1 được Navigator 3.0 sử dụng, các chuỗi trống được chuyển đổi thành 0.
+* If the results are separated by slashes, it means that JavaScript will try the former first and use the latter if unsuccessful.
+* **N/C** means No Conversion Necessary.
+* **decompile** represents a string containing the unique source code of the function.
+* **toString** represents the result of calling the toString method.
+* **valueOf** represents the result of calling the valueOf method when it can return a value for the target type.
+* **number** represents the corresponding numerical value when the string is a valid integer or floating-point number literal.
+* <sup>1</sup> If valueOf does not return a string, do the default object-to-string conversion.
+* <sup>2</sup> In JavaScript 1.1 used by Navigator 3.0, NaN is converted to true.
+* <sup>3</sup> In JavaScript 1.1 used by Navigator 3.0, empty strings are converted to 0.
 
 Hình 4. Các quy tắc chuyển đổi loại ẩn do Eich và McKinney đề xuất trong đặc tả ban đầu của JavaScript 1.1 [[1996](./references.md#TC39:1996:002), trang 23], các quy tắc tiêu chuẩn hóa cuối cùng hơi khác một chút so với cái này . Đây là bản sao của bảng gốc, với một số khác biệt nhỏ về mặt chữ. Chú thích 3 không xuất hiện trong văn bản gốc.
 
@@ -209,25 +209,25 @@ a.length = 3;
 Không có khái niệm về đối tượng *inheritance*<sup>[g](./appendices.md#inheritance)</sup> trong JavaScript 1.0. Chương trình phải thêm tất cả các thuộc tính cho từng đối tượng mới một cách riêng biệt, thường bằng cách xác định một hàm tạo cho từng đối tượng lớp được chương trình sử dụng. Hình 6 thể hiện sự trừu tượng hóa Point đơn giản dựa trên định nghĩa JavaScript 1.0.
 
 ``` js
-// Xác định các hàm được sử dụng làm phương thức
-hàm ptSum(pt2) {
-   trả về Điểm mới (this.x + pt2.x, this.y + pt2.y);
+// Define functions to be used as methods
+function ptSum(pt2) {
+   return new Point(this.x + pt2.x, this.y + pt2.y);
 }
-hàm ptDistance(pt2) {
+function ptDistance(pt2) {
    return Math.sqrt(Math.pow(pt2.x - this.x, 2) + Math.pow(pt2.y - this.y, 2));
 }
 
-//Định nghĩa hàm tạo điểm
-hàm Điểm(x, y) {
-   //Tạo và khởi tạo thuộc tính dữ liệu của đối tượng mới
-   cái này.x = x;
-   cái này.y = y;
+//Define Point constructor
+function Point(x, y) {
+   //Create and initialize the data properties of the new object
+   this.x = x;
+   this.y = y;
 
-   //Thêm phương thức vào từng đối tượng
+   //Add methods to each object instance
    this.sum = ptSum;
    this.distance = ptDistance;
 }
-var Origin = new Point(0, 0); // Tạo đối tượng Point
+var origin = new Point(0, 0); // Create Point object
 ```
 
 Hình 6. Sử dụng tính năng trừu tượng hóa Điểm được xác định trong JavaScript 1.0, mỗi đối tượng phiên bản có các thuộc tính phương thức riêng.

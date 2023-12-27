@@ -104,9 +104,9 @@ Another important difference between JavaScript and traditional C syntax is its 
 var a, x, y
 var r = 10
 with (Math) {
-   a = PI * r * r
-   x = r * cos(PI)
-   y = r * sin(PI / 2)
+  a = PI * r * r
+  x = r * cos(PI)
+  y = r * sin(PI / 2)
 }
 ```
 
@@ -127,7 +127,7 @@ The `void` operator only evaluates its operands and returns *undefined*. A commo
 
 ``` html
 <a href="javascript:void usefulFunction()">
-   Click to do something useful
+  Click to do something useful
 </a>
 ```
 
@@ -136,24 +136,24 @@ Here the value of `href` *attribute*<sup>[g](./appendices.md#attribute)</sup> sh
 The biggest difference between C and JavaScript expressions is that JavaScript operators automatically implicitly convert their operands to data types within the operator's domain. JavaScript 1.1 added a configurable mechanism for converting arbitrary objects into numeric or string values. Figure 4 summarizes JavaScript 1.1’s implicit type conversion (coercion) rules.
 
 <table>
-   <thead>
-     <tr><th>From - To</th><th>function</th><th>object</th><th>number</th><th>boolean</th><th>string< /th></tr>
-   </thead>
-   <tbody>
-     <tr><td><b>undefined</b></td><td>error</td><td>null</td><td>error</td><td>false</td> <td><code>"undefined"</code></td></tr>
-     <tr><td><b>function</b></td><td>N/C</td><td>Function object</td><td>valueOf/error</td><td> valueOf/true</td><td>decompile</td></tr>
-     <tr><td><b>object (not null)</b></td><td>Function object</td><td>N/C</td><td>valueOf/error</td ><td>valueOf/true</td><td>toString/valueOf<sup>1</sup></td></tr>
-     <tr><td><b>object (null)</b></td><td>error</td><td>N/C</td><td>0</td><td> false</td><td><code>"null"</code></td></tr>
-     <tr><td><b>number (zero)</b></td><td>error</td><td>null</td><td>N/C</td><td> false</td><td><code>"0"</code></td></tr>
-     <tr><td><b>number (nonzero)</b></td><td>error</td><td>Number</td><td>N/C</td><td> true</td><td>default</td></tr>
-     <tr><td><b>number (NaN)</b></td><td>error</td><td>Number</td><td>N/C</td><td> false<sup>2</sup></td><td><code>"NaN"</code></td></tr>
-     <tr><td><b>number (+Infinity)</b></td><td>error</td><td>Number</td><td>N/C</td><td >true</td><td><code>"+Infinity"</code></td></tr>
-     <tr><td><b>number (-Infinity)</b></td><td>error</td><td>Number</td><td>N/C</td><td >true</td><td><code>"-Infinity"</code></td></tr>
-     <tr><td><b>boolean (false)</b></td><td>error</td><td>Boolean</td><td>0</td><td>N/ C</td><td><code>"false"</code></td></tr>
-     <tr><td><b>boolean (true)</b></td><td>error</td><td>Boolean</td><td>1</td><td>N/ C</td><td><code>"true"</code></td></tr>
-     <tr><td><b>string (empty)</b></td><td>error</td><td>String</td><td>error<sup>3</sup>< /td><td>false</td><td>N/C</td></tr>
-     <tr><td><b>string (non-empty)</b></td><td>error</td><td>String</td><td>number/error</td>< td>true</td><td>N/C</td></tr>
-   </tbody>
+  <thead>
+    <tr><th>From - To</th><th>function</th><th>object</th><th>number</th><th>boolean</th><th>string</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><b>undefined</b></td><td>error</td><td>null</td><td>error</td><td>false</td><td><code>"undefined"</code></td></tr>
+    <tr><td><b>function</b></td><td>N/C</td><td>Function object</td><td>valueOf/error</td><td>valueOf/true</td><td>decompile</td></tr>
+    <tr><td><b>object (not null)</b></td><td>Function object</td><td>N/C</td><td>valueOf/error</td><td>valueOf/true</td><td>toString/valueOf<sup>1</sup></td></tr>
+    <tr><td><b>object (null)</b></td><td>error</td><td>N/C</td><td>0</td><td>false</td><td><code>"null"</code></td></tr>
+    <tr><td><b>number (zero)</b></td><td>error</td><td>null</td><td>N/C</td><td>false</td><td><code>"0"</code></td></tr>
+    <tr><td><b>number (nonzero)</b></td><td>error</td><td>Number</td><td>N/C</td><td>true</td><td>default</td></tr>
+    <tr><td><b>number (NaN)</b></td><td>error</td><td>Number</td><td>N/C</td><td>false<sup>2</sup></td><td><code>"NaN"</code></td></tr>
+    <tr><td><b>number (+Infinity)</b></td><td>error</td><td>Number</td><td>N/C</td><td>true</td><td><code>"+Infinity"</code></td></tr>
+    <tr><td><b>number (-Infinity)</b></td><td>error</td><td>Number</td><td>N/C</td><td>true</td><td><code>"-Infinity"</code></td></tr>
+    <tr><td><b>boolean (false)</b></td><td>error</td><td>Boolean</td><td>0</td><td>N/C</td><td><code>"false"</code></td></tr>
+    <tr><td><b>boolean (true)</b></td><td>error</td><td>Boolean</td><td>1</td><td>N/C</td><td><code>"true"</code></td></tr>
+    <tr><td><b>string (empty)</b></td><td>error</td><td>String</td><td>error<sup>3</sup></td><td>false</td><td>N/C</td></tr>
+    <tr><td><b>string (non-empty)</b></td><td>error</td><td>String</td><td>number/error</td><td>true</td><td>N/C</td></tr>
+  </tbody>
 </table>
 
 * If the results are separated by slashes, it means that JavaScript will try the former first and use the latter if unsuccessful.
